@@ -1,12 +1,8 @@
 {% extends "base.html" %}
 
-{% block title %}Serwis RTV/AGD – dashboard{% endblock %}
+{% block title %}Strona główna{% endblock %}
 
 {% block content %}
-  <h2>Panel serwisowy</h2>
-  <p>Witaj w systemie obsługi serwisu RTV/AGD.</p>
-
-  <ul>
-    <li><a href="{{ url_for('main.zlecenia_list') }}">Przeglądaj zlecenia</a></li>
-  </ul>
+    <h2>Strona główna serwisu</h2>
+    <p>Opis serwisu, formularz zgłoszenia usterki i kalendarz z wolnymi terminami.</p>
 {% endblock %}
