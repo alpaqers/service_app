@@ -15,24 +15,19 @@ cd service_app
 ```bash
 cd backend
 ```
-
+Aktywacja środowiska (po wpisaniu komend w terminalu powinien się pojawić przedorstek *(venv)*):
 ```bash
 python -m venv venv
 ```
-
-Aktywacja środowiska (po wpisaniu komendy w terminalu powinien się pojawić przedorstek *(venv)*):
-
-### Windows
+*Windows*
 ```bash
 venv\Scripts\activate
 ```
-
-### Linux / MacOS
+*Linux / MacOS*:
 ```bash
 source venv/bin/activate
 ```
 ---
-
 ```bash
 pip install -r requirements.txt
 ```
@@ -51,7 +46,6 @@ CREATE DATABASE service_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 ```bash
 flask db init
 ```
----
 
 ### Migracja
 
