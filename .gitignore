@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environment
+venv/
+.venv/
+
+# Flask migrations cache
+instance/
+migrations/versions/__pycache__/
+
+# MySQL dumps
+*.sql
+*.dump
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# secrets and environment variables
+.env
