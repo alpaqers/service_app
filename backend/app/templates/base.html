@@ -1,24 +1,28 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <title>{% block title %}Service App{% endblock %}</title>
-</head>
-<body>
-    <header>
-        <h1>Service App – Serwis RTV / AGD</h1>
-        <nav>
-            <a href="{{ url_for('main.index') }}">Strona główna</a> |
-            <a href="{{ url_for('main.login') }}">Logowanie</a> |
-            <a href="{{ url_for('main.panel_klienta') }}">Panel klienta</a> |
-            <a href="{{ url_for('main.panel_serwisanta') }}">Panel serwisanta</a> |
-            <a href="{{ url_for('main.panel_koordynatora') }}">Panel koordynatora</a>
-        </nav>
-        <hr>
+  <head>
+    <meta charset="utf-8" />
+    <title>{% block title %}Serwis RTV/AGD{% endblock %}</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container">
+        <h1 class="logo">Serwis RTV / AGD</h1>
+      </div>
     </header>
 
-    <main>
-        {% block content %}{% endblock %}
+    <main class="container">
+      {% block content %}{% endblock %}
     </main>
-</body>
+
+    <footer class="footer">
+      <div class="container">
+        <small>&copy; {{ 2025 }} Serwis RTV / AGD</small>
+      </div>
+    </footer>
+  </body>
 </html>

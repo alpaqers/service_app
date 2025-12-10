@@ -5,6 +5,7 @@ from .config import Config
 from .db import db
 from . import models
 from .routes import bp as main_bp
+from .api import api_bp
 
 
 migrate = Migrate()
@@ -19,6 +20,7 @@ def create_app():
     migrate.init_app(app, db)
 
     app.register_blueprint(main_bp)
+    app.register_blueprint(api_bp)
 
     @app.cli.command("init-db")
     def init_db():
