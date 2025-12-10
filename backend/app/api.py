@@ -123,7 +123,9 @@ def delete_klient(id_klienta):
     # Usuwamy urządzenia klienta
     Urządzenia.query.filter_by(id_klienta=id_klienta).delete()
 
-    # TODO: w razie potrzeby można tu dodać usuwanie zleceń, użytych części itd.
+    # Usuwamy samego klienta
+    Klienci.query.filter_by(id_klienta=id_klienta).delete()
+
     db.session.delete(klient)
     db.session.commit()
 
@@ -330,7 +332,7 @@ def create_pracownik():
         imie=data["imie"],
         nazwisko=data["nazwisko"],
         email=data["email"],
-        haslo=data.get("haslo", ""),  # docelowo: hashowanie
+        haslo=data.get("haslo", ""),
         nr_telefonu=data.get("nr_telefonu"),
         stanowisko=data.get("stanowisko"),
     )
@@ -441,7 +443,6 @@ def add_czesci_to_zlecenie(id_zlecenia):
 def statystyki_czesci():
     """
     Zestawienie najczęściej wykorzystywanych typów części.
-    Odpowiada zapytaniu z dokumentacji.
     """
     q = (
         db.session.query(
