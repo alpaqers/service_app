@@ -79,7 +79,7 @@ def create_klient():
 @api_bp.get("/klienci/<int:id_klienta>")
 def get_klient(id_klienta):
     klient = Klienci.query.get_or_404(id_klienta)
-    adres = klient.adres  # relacja one-to-one
+    adres = klient.adres
 
     return jsonify({
         "id_klienta": klient.id_klienta,
@@ -121,7 +121,12 @@ def delete_klient(id_klienta):
         Adresy.query.filter_by(id_adresu=klient.id_adresu).delete()
 
     # Usuwamy urządzenia klienta
-    Urządzenia.query.filter_by(id_klienta=id_klienta).delete()
+    if klient.id_adresu is not None:
+        Urządzenia.query.filter_by(id_klienta=klient.id_klienta).delete()
+
+    # Usuwamy zlecenia klienta
+    if klient.id_adresu is not None:
+        Zlecenia.query.filter_by(id_klienta=klient.id_klienta).delete()
 
     # Usuwamy samego klienta
     Klienci.query.filter_by(id_klienta=id_klienta).delete()
@@ -210,7 +215,7 @@ def get_zlecenie(id_zlecenia):
 def create_zlecenie():
     """
     Transakcja:
-    - dodanie urządzenia (jeśli nowe)
+    - dodanie urządzenia
     - dodanie zlecenia
     - przypisanie pracownika
     """
@@ -230,7 +235,7 @@ def create_zlecenie():
         opis=urz_data.get("opis"),
     )
     db.session.add(urz)
-    db.session.flush()  # żeby mieć id_urzędzenia
+    db.session.flush()
 
     # 2. dodanie zlecenia
     zlec = Zlecenia(
