@@ -1,4 +1,5 @@
 import React from "react";
+import ServiceSlotsCarousel from "../components/ServiceSlotsCarousel";
 import ContactForm from "../components/ContactForm";
 import Landing from "../components/Landing/Landing";
 
@@ -9,6 +10,7 @@ export function Home() {
         <p className="mt-2 text-zinc-600">
           Strona główna
         </p>
+        <ServiceSlotsCarousel />
 
         <ContactForm />
         <Landing />
