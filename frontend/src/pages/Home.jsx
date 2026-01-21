@@ -1,3 +1,5 @@
+import React from "react";
+import ContactForm from "../components/ContactForm";
 import Landing from "../components/Landing/Landing";
 
 export function Home() {
@@ -8,6 +10,7 @@ export function Home() {
           Strona główna
         </p>
 
+        <ContactForm />
         <Landing />
       </>
     );
