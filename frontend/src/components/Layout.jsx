@@ -6,7 +6,7 @@ export function Layout({ children }) {
       <div className="flex min-h-screen flex-col">
         <Header />
   
-        <main className="mx-auto w-screen py-8">
+        <main className="w-full">
           {children}
         </main>
         <Footer />
