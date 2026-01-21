@@ -1,3 +1,5 @@
+import ContactInfoSection from "../components/ContactInfoSection";
+
 export function Home() {
     return (
       <>
@@ -5,6 +7,8 @@ export function Home() {
         <p className="mt-2 text-zinc-600">
           Strona główna
         </p>
+
+        <ContactInfoSection />
       </>
     );
   }
