@@ -1,3 +1,6 @@
+import React from "react";
+import CalendarMonthPl from "../components/CalendarMonthPl";
+
 export function Home() {
     return (
       <>
@@ -5,6 +8,8 @@ export function Home() {
         <p className="mt-2 text-zinc-600">
           Strona główna
         </p>
+
+        <CalendarMonthPl />
       </>
     );
   }
