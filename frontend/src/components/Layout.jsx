@@ -1,4 +1,5 @@
 import Header from "./Header";
+import Footer from "./Footer";
 
 export function Layout({ children }) {
     return (
@@ -8,6 +9,7 @@ export function Layout({ children }) {
         <main className="mx-auto max-w-6xl px-4 py-8">
           {children}
         </main>
+        <Footer />
       </div>
     );
   }
