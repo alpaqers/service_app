@@ -1,3 +1,5 @@
+import Landing from "../components/Landing/Landing";
+
 export function Home() {
     return (
       <>
@@ -5,6 +7,8 @@ export function Home() {
         <p className="mt-2 text-zinc-600">
           Strona główna
         </p>
+
+        <Landing />
       </>
     );
   }

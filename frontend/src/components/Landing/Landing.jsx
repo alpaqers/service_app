@@ -1,15 +1,15 @@
 import { Content } from "./Content";
 import background_image from "../../assets/hero-image.jpg";
 
-export function Landing() {
+export default function Landing() {
   return (
     <div className="relative w-full flex justify-center">
       {/* Jeden obraz na całą szerokość (max-width) */}
-      <div className="relative w-full max-w-screen-xl overflow-hidden">
+      <div className="relative w-full overflow-hidden">
         <img
           src={background_image}
           alt="hero"
-          className="w-full h-auto object-cover"
+          className="w-full h-screen object-cover"
         />
 
         {/* Dwa bloki, każdy z własną połową obrazu */}
