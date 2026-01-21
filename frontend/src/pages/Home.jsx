@@ -1,5 +1,6 @@
 import React from "react";
 import ContactForm from "../components/ContactForm";
+import Landing from "../components/Landing/Landing";
 
 export function Home() {
     return (
@@ -10,6 +11,7 @@ export function Home() {
         </p>
 
         <ContactForm />
+        <Landing />
       </>
     );
   }
