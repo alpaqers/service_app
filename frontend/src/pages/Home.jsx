@@ -1,3 +1,6 @@
+import React from "react";
+import ContactForm from "../components/ContactForm";
+
 export function Home() {
     return (
       <>
@@ -5,6 +8,8 @@ export function Home() {
         <p className="mt-2 text-zinc-600">
           Strona główna
         </p>
+
+        <ContactForm />
       </>
     );
   }
